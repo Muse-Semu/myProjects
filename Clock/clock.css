@@ -1,0 +1,101 @@
+*{
+    box-sizing: border-box;
+
+}
+body{
+    background: linear-gradient(to right, #15a0e6, #00ff55, #e26cbb);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.clock{
+    width: 300px;
+    height: 300px;
+    background-color: rgb(128, 128, 128,.8);
+    box-shadow: rgb(128, 128, 128) 2px 3px 70px 2px;
+    border-radius: 50%;
+    border:1px rgb(224, 201, 201) solid;
+    position: relative;
+}
+
+.clock .number{
+    --rotate:0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform: rotate(var(--rotate));
+}
+
+.clock  .number1{--rotate:30deg; }
+.clock  .number2{--rotate:60deg;}
+.clock  .number3{--rotate:90deg;color:red}
+.clock  .number4{--rotate:120deg;}
+.clock  .number5{--rotate:150deg;}
+.clock  .number6{--rotate:180deg;color:red}
+.clock  .number7{--rotate:210deg;}
+.clock  .number8{--rotate:240deg;}
+.clock  .number9{--rotate:270deg;color:red}
+.clock  .number10{--rotate:300deg;}
+.clock  .number11{--rotate:330deg;}
+.clock  .number12{--rotate:360deg;color:red}
+
+.clock .hand{
+    --rotate:0;
+    position: absolute;
+    width: 10px;
+    height: 50%;
+    bottom: 50%;
+    left: 50%;
+    background-color: black;
+    border: 1px solid white;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 80px;
+    z-index: 10;
+    transform-origin: bottom;
+    transform: translateX(-50%) rotate( calc(var(--rotate)*1deg));
+}
+
+.clock::after{
+    content:'';
+    position: absolute;
+    background-color: black;
+    z-index: 11;
+    width: 15px;
+    height: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+}
+
+.clock .hand.second{
+    width: 3px;
+    height: 45%;
+    background-color: red;
+}
+
+.clock .hand.minute{
+    width: 7px;
+    height: 40%;
+    background-color: rgb(34, 31, 31);
+}
+
+.clock .hand.hour{
+    width: 10px;
+    height: 35%;
+    background-color: rgb(24, 22, 22);
+}
+
+.show-time{
+    font-size: 2rem;
+    font-weight: 900;
+    background-color: #00ff55;
+}
+
+
